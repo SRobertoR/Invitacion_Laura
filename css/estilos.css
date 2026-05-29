@@ -1,0 +1,62 @@
+/* Estilos generales y tipografía */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0c1a15; /* Verde esmeralda muy oscuro y elegante */
+    color: #f4f4f5;
+    overflow-x: hidden;
+}
+
+.font-serif-elegant {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Canvas de efectos visuales (Fondo de destellos dorados) */
+#gold-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Capa contenedora para asegurar que el contenido quede sobre el efecto visual */
+.content-layer {
+    position: relative;
+    z-index: 10;
+}
+
+/* Animación suave para la transición de imágenes del carrusel */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Estilización personalizada del reproductor de música flotante */
+.music-control-btn {
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+/* Animación de pulso continuo para los destellos del botón musical */
+@keyframes pulse-gold {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2); 
+    }
+    50% { 
+        transform: scale(1.05); 
+        box-shadow: 0 4px 25px rgba(212, 175, 55, 0.4); 
+    }
+}
+
+.pulse-active {
+    animation: pulse-gold 2s infinite;
+}

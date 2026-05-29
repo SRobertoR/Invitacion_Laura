@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebración de mis 60 Años</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="bg-[#0c1a15] text-zinc-100 antialiased overflow-x-hidden">
+
+    <canvas id="gold-particles"></canvas>
+
+    <audio id="bg-music" loop>
+        <source src="audio/fondo.mp3" type="audio/mpeg">
+        Tu navegador no soporta elementos de audio.
+    </audio>
+
+    <div id="music-widget" class="fixed bottom-6 right-6 z-50 hidden">
+        <button id="music-toggle" class="music-control-btn bg-[#d4af37] hover:bg-[#eec759] text-zinc-950 p-4 rounded-full font-bold transition-all duration-300 flex items-center justify-center gap-2 pulse-active">
+            <span id="music-icon">🎵</span>
+            <span class="text-xs uppercase tracking-wider font-semibold hidden md:inline">Música</span>
+        </button>
+    </div>
+
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
+        <div class="border border-[#d4af37]/20 p-8 md:p-16 max-w-3xl rounded-3xl backdrop-blur-md bg-[#0c1a15]/60 shadow-2xl transition-all duration-500">
+            <span class="text-[#d4af37] tracking-[0.4em] text-xs md:text-sm uppercase block mb-6 font-medium">Estás cordialmente invitado</span>
+            <h1 class="font-serif-elegant text-5xl md:text-8xl font-bold text-[#eec759] mb-4">Mis 60 Años</h1>
+            <p class="text-zinc-300 text-lg md:text-xl italic mb-10 max-w-xl mx-auto">"Celebrando sesenta años de maravillosas historias, risas compartidas y bendiciones."</p>
+            
+            <button id="btn-start" class="cursor-pointer inline-block bg-[#d4af37] hover:bg-[#eec759] text-zinc-950 font-semibold px-10 py-4 rounded-full transition-all duration-300 tracking-wide uppercase text-sm shadow-xl shadow-[#d4af37]/10 hover:scale-105">
+                Ver Detalles y Escuchar
+            </button>
+        </div>
+    </section>
+
+    <div id="main-content" class="content-layer hidden opacity-0 transition-opacity duration-1000">
+
+        <section id="contador-seccion" class="sticky top-0 z-40 py-6 md:py-8 bg-[#060f0c]/95 border-b border-[#d4af37]/25 backdrop-blur-md shadow-lg">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h3 class="text-zinc-400 tracking-widest text-[10px] md:text-xs uppercase mb-3 font-medium">El gran momento comienza en:</h3>
+                
+                <div class="grid grid-cols-4 gap-2 md:gap-6 max-w-xl mx-auto">
+                    <div class="bg-[#0c1a15]/90 border border-zinc-800/80 p-2 md:p-4 rounded-xl md:rounded-2xl">
+                        <span id="days" class="font-serif-elegant text-xl md:text-4xl font-bold text-[#eec759]">00</span>
+                        <p class="text-[8px] md:text-xs uppercase tracking-wider text-zinc-500 mt-0.5">Días</p>
+                    </div>
+                    <div class="bg-[#0c1a15]/90 border border-zinc-800/80 p-2 md:p-4 rounded-xl md:rounded-2xl">
+                        <span id="hours" class="font-serif-elegant text-xl md:text-4xl font-bold text-[#eec759]">00</span>
+                        <p class="text-[8px] md:text-xs uppercase tracking-wider text-zinc-500 mt-0.5">Horas</p>
+                    </div>
+                    <div class="bg-[#0c1a15]/90 border border-zinc-800/80 p-2 md:p-4 rounded-xl md:rounded-2xl">
+                        <span id="minutes" class="font-serif-elegant text-xl md:text-4xl font-bold text-[#eec759]">00</span>
+                        <p class="text-[8px] md:text-xs uppercase tracking-wider text-zinc-500 mt-0.5">Minutos</p>
+                    </div>
+                    <div class="bg-[#0c1a15]/90 border border-zinc-800/80 p-2 md:p-4 rounded-xl md:rounded-2xl">
+                        <span id="seconds" class="font-serif-elegant text-xl md:text-4xl font-bold text-[#eec759]">00</span>
+                        <p class="text-[8px] md:text-xs uppercase tracking-wider text-zinc-500 mt-0.5">Segundos</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumplea%C3%B1os+60+&dates=20261024T210000Z/20261025T020000Z&details=%C2%A1Acomp%C3%B1anos+a+celebrar+este+d%C3%ADa+tan+especial%21&location=Sal%C3%B3n+Jard%C3%ADn+%22Las+Palmas%22%2C+Av.+Ficticia+%23456%2C+Col.+Elegante%2C+CDMX" target="_blank" class="inline-flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-[#eec759] border border-[#d4af37]/30 text-xs uppercase tracking-wider font-semibold px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-md">
+                        📅 Agregar a mi Calendario
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="detalles" class="py-20 px-4 max-w-7xl mx-auto scroll-mt-24">
+            <h2 class="font-serif-elegant text-4xl md:text-5xl text-center text-[#eec759] mb-16">Detalles del Evento</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <div class="bg-[#060f0c]/60 border border-[#d4af37]/10 p-6 md:p-8 rounded-3xl backdrop-blur-md shadow-lg flex flex-col justify-center items-center text-center min-h-[250px] lg:min-h-full">
+                    <div class="text-[#d4af37] text-5xl mb-4">✨</div>
+                    <h3 class="font-serif-elegant text-2xl text-white font-medium mb-3">Código de Vestimenta</h3>
+                    <span class="bg-[#d4af37]/10 text-[#eec759] border border-[#d4af37]/30 text-xs uppercase tracking-widest font-semibold px-4 py-1.5 rounded-full mb-4">
+                        Casual
+                    </span>
+                    <p class="text-zinc-400 text-sm max-w-xs leading-relaxed px-2">
+                        "Queremos que disfrutes al máximo y estés cómodo. Te invitamos a asistir con vestimenta casual para celebrar juntos."
+                    </p>
+                </div>
+
+                <div class="bg-[#060f0c]/60 border border-[#d4af37]/10 p-6 md:p-8 rounded-3xl backdrop-blur-md shadow-lg flex flex-col justify-between">
+                    <div class="text-center mb-6">
+                        <div class="text-[#d4af37] text-4xl mb-4">⛪</div>
+                        <h3 class="font-serif-elegant text-2xl text-white font-medium mb-3">Ceremonia Religiosa</h3>
+                        <p class="text-zinc-300 font-medium">Sábado, 24 de Octubre</p>
+                        <p class="text-zinc-400 text-sm mt-1">A partir de las 16:00 hrs</p>
+                        <p class="text-zinc-400 text-xs mt-2 italic">Parroquia de Nuestra Señora</p>
+                    </div>
+                    <div class="w-full aspect-video rounded-2xl overflow-hidden border border-zinc-800 shadow-inner">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.9422019276367!2d-99.27164309999999!3d19.4149031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d203e1540fd4ff%3A0x76a4c26e300f6269!2sParroquia%20de%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe!5e0!3m2!1ses-419!2smx!4v1780092448179!5m2!1ses-419!2smx" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <div class="bg-[#060f0c]/60 border border-[#d4af37]/10 p-6 md:p-8 rounded-3xl backdrop-blur-md shadow-lg flex flex-col justify-between">
+                    <div class="text-center mb-6">
+                        <div class="text-[#d4af37] text-4xl mb-4">🏢</div>
+                        <h3 class="font-serif-elegant text-2xl text-white font-medium mb-3">Celebración</h3>
+                        <p class="text-zinc-300 font-medium">Salón Jardín "Las Palmas"</p>
+                        <p class="text-zinc-400 text-sm mt-1">Av. Ficticia #456, Col. Elegante, CDMX</p>
+                        <p class="text-zinc-400 text-xs mt-2 italic">Después de la ceremonia</p>
+                    </div>
+                    <div class="w-full aspect-video rounded-2xl overflow-hidden border border-zinc-800 shadow-inner">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.125054152998!2d-99.28129582418825!3d19.40700204149669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d206b4b5099e33%3A0x22e0a4b2e026f82!2sCentro%20Comunitario%20PIRULES!5e0!3m2!1ses-419!2smx!4v1780092524360!5m2!1ses-419!2smx" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-20 bg-[#060f0c]/40 border-y border-zinc-900">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="font-serif-elegant text-3xl md:text-4xl text-center text-[#eec759] mb-12">Una Vida de Recuerdos</h2>
+                
+                <div class="relative rounded-3xl overflow-hidden border border-[#d4af37]/20 shadow-2xl group h-96 md:h-[550px] bg-[#050b09]">
+                    <div id="carouselTrack" class="carousel-track h-full">
+                        <div class="carousel-item h-full">
+                            <img src="img/Foto1.png" alt="Momento de vida 1" class="w-full h-full object-contain">
+                        </div>
+                        <div class="carousel-item h-full">
+                            <img src="img/Foto2.jpeg" alt="Momento de vida 2" class="w-full h-full object-contain">
+                        </div>
+                        <div class="carousel-item h-full">
+                            <img src="img/Foto3.jpeg" alt="Momento de vida 3" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+
+                    <button id="prevBtn" class="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 bg-zinc-950/70 hover:bg-[#d4af37] hover:text-zinc-950 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 font-bold z-20">‹</button>
+                    <button id="nextBtn" class="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 bg-zinc-950/70 hover:bg-[#d4af37] hover:text-zinc-950 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 font-bold z-20">›</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 text-center px-4">
+            <div class="max-w-md mx-auto bg-[#060f0c]/60 border border-zinc-800 p-8 md:p-12 rounded-3xl backdrop-blur-md">
+                <h2 class="font-serif-elegant text-3xl text-[#eec759] mb-4">Confirmar Asistencia</h2>
+                <p class="text-zinc-400 mb-8 text-sm leading-relaxed">Tu presencia es el mejor regalo para esta gran celebración. Agradecemos confirmes antes del 10 de octubre.</p>
+                
+                <a href="https://wa.me/525527195814?text=Confirmo mi asistencia 🥳" target="_blank" class="inline-flex items-center justify-center bg-emerald-700 hover:bg-emerald-600 text-white font-medium px-8 py-3.5 rounded-full transition-all duration-300 w-full tracking-wider uppercase text-xs hover:scale-105 shadow-lg">Confirmar por WhatsApp</a>
+            </div>
+        </section>
+
+        <footer class="py-10 text-center text-xs text-zinc-600 border-t border-zinc-900 bg-[#060f0c]/80">
+            <p class="tracking-widest uppercase mb-2">¡Gracias por formar parte de mi vida!</p>
+            <p>© 2026 - Celebración Especial</p>
+        </footer>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
