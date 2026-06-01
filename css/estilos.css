@@ -60,3 +60,82 @@ body {
 .pulse-active {
     animation: pulse-gold 2s infinite;
 }
+
+
+
+/* Contenedor principal de esta sección */
+.seccion-recuerdos {
+    text-align: center;
+    padding: 40px 20px;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif; /* Fuente elegante y formal */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilo mejorado para el título dorado */
+.titulo-dorado {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    /* Efecto de degradado dorado metálico */
+    background: linear-gradient(135deg, #f3e71a 0%, #e6af2e 40%, #b38612 70%, #f3e71a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Sombra suave para dar profundidad sobre el fondo oscuro */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Texto descriptivo intermedio */
+.texto-introduccion {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #e0e0e0; /* Un blanco sutilmente suave para que no compita con el dorado */
+    font-weight: 300;
+}
+
+/* Contenedor de la cita con líneas doradas a los lados */
+.contenedor-cita {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* Pequeñas líneas divisorias doradas */
+.adorno-linea {
+    height: 1px;
+    width: 50px;
+    background: linear-gradient(90deg, transparent, #e6af2e, transparent);
+    display: inline-block;
+}
+
+/* La frase principal en cursiva y tono dorado suave */
+.frase-corazon {
+    font-size: 1.25rem;
+    font-style: italic; /* Aplica la letra cursiva */
+    color: #f3d078; /* Dorado suave y muy legible */
+    margin: 0;
+    padding: 0 10px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Ajuste responsivo para celulares */
+@media (max-width: 600px) {
+    .titulo-dorado {
+        font-size: 2rem;
+    }
+    .texto-introduccion {
+        font-size: 1rem;
+    }
+    .frase-corazon {
+        font-size: 1.1rem;
+    }
+    .adorno-linea {
+        width: 30px; /* Líneas más cortas en pantallas pequeñas */
+    }
+}
