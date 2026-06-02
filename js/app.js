@@ -110,10 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 2.5 + 0.5;
+            this.size = Math.random() * 4.5 + 2.0; // Partículas más grandes (mínimo 2px, máximo 6.5px)
             this.speedY = Math.random() * 0.6 + 0.2;
             this.speedX = Math.random() * 0.4 - 0.2;
-            this.opacity = Math.random() * 0.5 + 0.2;
+            this.opacity = Math.random() * 0.4 + 0.5; // Mayor opacidad (mínimo 50% visibles)
         }
 
         update() {
